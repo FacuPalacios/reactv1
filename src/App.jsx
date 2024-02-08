@@ -5,7 +5,8 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
-
+  const [nombre, setNombre] = useState(""); //Tiene valor inicial vacío (arriba tiene valor inicial 0)
+  //Toda la lógica del componente (osea el app.jsx) vive aquí antes del return
   return (
     <>
       <div>
@@ -18,7 +19,10 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
+        <button onClick={() =>{
+           setCount((count) => count + 1)
+           setNombre((nombre) => nombre + "A-")
+           }}>
           count is {count}
         </button>
         <p>
@@ -28,6 +32,9 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+
+      <h1>Hola mundo react</h1>
+      <p>Valor del estado Nombre: {nombre}</p>
     </>
   )
 }
